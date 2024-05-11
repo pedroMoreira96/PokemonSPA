@@ -1,0 +1,369 @@
+.type-icon {
+  display: inline-block;
+  width: fit-content;
+  margin-left: 1%;
+  background: #dbdbdb;
+  border: 1px solid #a3a3a3;
+  border-radius: 10%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 80%;
+  font-weight: normal;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  text-transform: uppercase;
+  transition: opacity 0.4s;
+}
+
+/* .type-icon:hover,
+.type-icon:active,
+.type-icon:focus {
+  color: #fff;
+  text-decoration: none;
+}
+
+.type-icon:link:hover,
+.type-icon:link:active,
+.type-icon:link:focus {
+  opacity: 0.85;
+} */
+
+.type-normal {
+  background-color: #aa9;
+}
+
+.type-fire {
+  background-color: #f42;
+}
+
+.type-water {
+  background-color: #39f;
+}
+
+.type-electric {
+  background-color: #fc3;
+}
+
+.type-grass {
+  background-color: #7c5;
+}
+
+.type-ice {
+  background-color: #6cf;
+}
+
+.type-fighting {
+  background-color: #b54;
+}
+
+.type-poison {
+  background-color: #a59;
+}
+
+.type-ground {
+  background-color: #db5;
+}
+
+.type-flying {
+  background-color: #89f;
+}
+
+.type-psychic {
+  background-color: #f59;
+}
+
+.type-bug {
+  background-color: #ab2;
+}
+
+.type-rock {
+  background-color: #ba6;
+}
+
+.type-ghost {
+  background-color: #66b;
+}
+
+.type-dragon {
+  background-color: #76e;
+}
+
+.type-dark {
+  background-color: #754;
+}
+
+.type-steel {
+  background-color: #aab;
+}
+
+.type-fairy {
+  background-color: #e9e;
+}
+
+.type-curse {
+  background-color: #698;
+}
+
+.itype {
+  color: #737373;
+}
+
+.itype.normal {
+  color: #797964;
+}
+
+.itype.fire {
+  color: #d52100;
+}
+
+.itype.water {
+  color: #0080ff;
+}
+
+.itype.electric {
+  color: #c90;
+}
+
+.itype.grass {
+  color: #5cb737;
+}
+
+.itype.ice {
+  color: #0af;
+}
+
+.itype.fighting {
+  color: #a84d3d;
+}
+
+.itype.poison {
+  color: #88447a;
+}
+
+.itype.ground {
+  color: #bf9926;
+}
+
+.itype.flying {
+  color: #556dff;
+}
+
+.itype.psychic {
+  color: #ff227a;
+}
+
+.itype.bug {
+  color: #83901a;
+}
+
+.itype.rock {
+  color: #a59249;
+}
+
+.itype.ghost {
+  color: #5454b3;
+}
+
+.itype.dragon {
+  color: #4e38e9;
+}
+
+.itype.dark {
+  color: #573e31;
+}
+
+.itype.steel {
+  color: #8e8ea4;
+}
+
+.itype.fairy {
+  color: #e76de7;
+}
+
+header {
+  width: 100%;
+  background-color:#0080ff;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  background-color:#0080ff;
+ /* background-image: url('/resources/navBack.png');*/
+  width: 100%;
+  display: flex;
+  justify-content:space-around;
+  z-index: 1;
+}
+
+.navbar > * {
+  flex-grow: inherit;
+  background-color:#0080ff;
+}
+
+#pokeballImg {
+  max-width: 100%;
+}
+
+form {
+  display: flex;
+  column-gap: 1%;
+}
+
+body {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  min-height: 100vh;
+}
+
+#background {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#ash {
+  margin-top: 23vh;
+  width: 20vh;
+}
+
+@media screen and (max-width: 600px) {
+  #ash {
+    margin-top: 30vh;
+  }
+}
+
+#mainDiv {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15vh;
+  margin-bottom: 8vh;
+  flex-direction: column;
+  align-items: center;
+}
+
+#zeca {
+  max-width: 50%;
+  box-shadow: 0px 0px 15px 0px rgba(154, 152, 152, 0.62);
+}
+
+#zeca > * {
+  max-width: 100%;
+  width: 100%;
+  font-size: 80%;
+  text-align: justify;
+}
+
+.image-container {
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  width: 20%;
+  display: flex;
+}
+
+.card-img-top {
+  padding: 10%;
+  max-width: 100%;
+}
+
+.card-title {
+  font-size: 150%;
+}
+
+.card-link {
+  text-decoration: none;
+}
+
+#logo {
+  display:flex;
+  justify-content: center;
+  width: 60%;
+}
+
+@media screen and (min-width: 1000px) {
+  #logo {
+    width: 40vh;
+  }
+}
+
+#pokeTable{
+  width: 60%;
+  height: 70vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  gap: 5%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  box-shadow: 0px 0px 15px 0px rgba(154, 152, 152, 0.62);
+  border: 1vh solid rgba(255, 255, 255, 0.506);
+  border-radius: 5%;
+  background-color: rgba(255, 255, 255, 0.506);
+  align-items: center;
+  justify-content: center;
+}
+
+#pokeTable > * {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-weight: bold;
+  padding-top: 5%;
+}
+
+@media screen and (max-width: 600px) {
+  #pokeTable {
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #pokeTable {
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+  }
+}
+
+#notFound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.62);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.62);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.62);
+  text-align: center;
+  font-weight: bold;
+  margin-top: 6%;
+}
+
+.socialMedia {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  column-gap: 2%;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background: #837960 url('https://i.stack.imgur.com/MUsp6.jpg') 0 0 no-repeat;
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%, grey 50%);
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, grey 50%);
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0) 0%, grey 50%);
+  background: -ms-linear-gradient(top, rgba(255, 255, 255, 0) 0%, grey 50%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, grey 50%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#825B00', GradientType=0);
+}
+
+.footer-icon {
+  width: 80%;
+}
