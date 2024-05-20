@@ -12,8 +12,12 @@ export default {
         controller: "specialPokemonController",
     },
     pokemon: {
-        path: "/pokemon",
+        path: "/pokemon=?",
         controller: "cardController",
+    },
+    about: {
+        path: "/about",
+        controller: "aboutController",
     },
     currentPath: {
         path: "",

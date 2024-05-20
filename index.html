@@ -17,6 +17,7 @@
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="icon" href="./Resources/fire.png">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
     <script type="module" src="/js/index.js"></script>
 
     <!-- Title and fav icon -->
@@ -25,43 +26,58 @@
 </head>
 
 
-<header>
-         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" id="homePokeball" href="#/"> <img src="resources/pokeball.png" id="pokeballImg"></a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Pokémons
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#/pokemonList" id="pokeList">Pokémon List</a>
-
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#/specialPokemon">Special Pokémons</a>
-                        </div>
-                    </li>
-                </ul>
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp"
-                            placeholder="Write Pokemon name">
-                    </div>
-
-                    <a href="#/pokemon"><button type="button" class="btn btn-warning" id="search">Search</button></a>
-                </form>
-            </div>
-        </nav>
-</header>
 
 <body>
+
+        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+           <a id="homePokeball" href="#/"> <img src="resources/pokeball.png" id="pokeballImg"></a>
+
+           <div class="navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav mr-auto">
+
+                   <li class="nav-item dropdown">
+                       <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                           Pokémons
+                       </a>
+                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                           <a class="dropdown-item" href="#/pokemonList" id="pokeList">Pokémon List</a>
+
+                           <div class="dropdown-divider"></div>
+                           <a class="dropdown-item" href="#/specialPokemon">Special Pokémons</a>
+                       </div>
+                   </li>
+               </ul>
+               <form> 
+                       <input type="text" class="form-control" id="userInput" aria-describedby="emailHelp"
+                           placeholder="Write Pokemon name">
+                       <a href="#/pokemon"><button type="button" class="btn btn-warning" id="search">Search</button></a>
+               </form>
+           </div>
+       </nav>
+ -->
+ 
+ <nav class="nav">
+    <i class="uil uil-bars navOpenBtn"></i>
+   
+    <a id="homePokeball" href="#/"> <img src="resources/pokeball.png" id="pokeballImg"></a>
+  
+    <ul class="nav-links">
+      <i class="uil uil-times navCloseBtn"></i>
+      <li><a href="#/">Home</a></li>
+      <li><a href="#/pokemonList" id="pokeList">Pókemon List</a></li>
+      <li><a href="#/specialPokemon">Special Pókemon</a></li>
+      <li><a href="#/about">About Us</a></li>
+    </ul>
+  
+    <a href="#/pokemon"><i class="uil uil-search search-icon" id="searchIcon" ></i></a>
+    <div class="search-box">
+      <i class="uil uil-search search-icon"></i>
+      <input type="text" id="userInput" placeholder="Pokémon name..." />
+    </div>
+  </nav>
+
 
     <img src="resources/background.png" id="background">
 

@@ -1,5 +1,5 @@
-import cardView from '/js/view/cardView.js';
-import { fetchName } from '/js/service/cardService.js';
+/* import { processPokemon } from '/js/view/cardView.js';
+import { fetchName } from '/js/service/cardService.js'; */
 
 function showList(results) {
   var list = results.split(/[\n:]/);
@@ -12,22 +12,25 @@ function showList(results) {
   mainDiv.append(pokeTable);
 
   for (let i = 0; i < list.length; i = i + 2) {
-
-    let pokeDiv = `<div class="nameImg" id="${list[i+1]}"></div>`;
-
-    $("#pokeTable").append(pokeDiv)
     
+    let pokemonName = list[i + 1];
+
+    let pokeDiv = `<div class="nameImg" id="${pokemonName}"></div>`;
+
+    $('#pokeTable').append(pokeDiv);
+
     let pokeName = `<div>${list[i]}</div>`;
-    let pokeImg = `<div><a href="#/pokemon" id="${list[i + 1]}">
-                   <img src="https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/sprites/${list[i + 1]}.png"></a></div>`;
+    let pokeImg = `<div><a href="#/${pokemonName}" id="${pokemonName}">
+                   <img src="https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/sprites/${pokemonName}.png"></a></div>`;
 
-    $(`#${list[i+1]}`).append(pokeName);
-    $(`#${list[i+1]}`).append(pokeImg);
+    $(`#${pokemonName}`).append(pokeName);
+    $(`#${pokemonName}`).append(pokeImg);
 
-
-    document.getElementById(list[i + 1]).addEventListener('click', function () {
-      fetchName(cardView.processPokemon, list[i + 1]);
-    });
+      document.getElementById(pokemonName).addEventListener('click', function () {
+     /* fetchName(processPokemon, pokemonName);*/
+     
+     window.location.hash = `#/pokemon=${pokemonName}`;
+    });  
   }
 }
 
