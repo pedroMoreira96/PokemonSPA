@@ -1,16 +1,15 @@
 
-
 function processPokemon(results) {
-  var body = $('#mainDiv');
+  let body = $('#mainDiv');
   body.empty();
 
-  var name = results.name;
+  let name = results.name;
 
-  var nameImg = name.toLowerCase();
+  let nameImg = name.toLowerCase();
 
-  var URL = `https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/images/${nameImg}.jpg`;
+  let URL = `https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/images/${nameImg}.jpg`;
 
-  var card = `<div class="card" id="zeca" style="width: 18rem;">
+  let card = `<div class="card" id="zeca" style="width: 18rem;">
              <div class="imageDiv">
              <img src="${URL}" class="card-img-top" alt="${name}">
              </div>
@@ -36,6 +35,7 @@ function processPokemon(results) {
         </div></div>`;
         
   body.append(card);
+
 }
 
 /* $('#searchIcon').on('click', function () {

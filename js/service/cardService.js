@@ -1,22 +1,29 @@
 import notFoundView from '/js/view/notFoundView.js';
 
-function fetchPokemon(cb) {
-  var URL =
+function fetchPokemon(name, cb) {
+  console.log(name);
+  let URL =
     'https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/pokedex.php?pokemon=' +
-    $('#userInput').val();
+    name;
 
+  console.log(`Fetching URL: ${URL}`); // Debug log
   $.ajax({
     url: URL,
     async: true,
     type: 'GET',
     dataType: 'json',
     success: cb,
-    error: notFoundView.showView,
+    error: function(err) {
+      console.error(`Error fetching Pokémon: ${name}`, err); // Debug log
+      notFoundView.showView();
+    }
   });
 }
 
+
+
 function fetchName(cb, name) {
-  var URL =
+  let URL =
     'https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/pokedex.php?pokemon=' +
     name;
 

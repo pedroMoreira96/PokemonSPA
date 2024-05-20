@@ -10,8 +10,6 @@ function showHome() {
   body.append(ashImage);
 }
 
-
-
 $('#homePokeball').on('click', function cleanPage() {
   showHome();
   document.getElementById('userInput').value = '';
@@ -45,6 +43,12 @@ navCloseBtn.addEventListener("click", () => {
   nav.classList.remove("openNav");
 });
 
-
+$('#userInput').on('keypress', function (e) {
+  if (e.which === 13) {
+    let pokemonName = $('#userInput').val();
+    window.location.hash = (`/pokemon/${pokemonName}`);
+    $('#userInput').val('');
+  }
+});
 
 export default { showHome };

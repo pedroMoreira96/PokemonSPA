@@ -1,6 +1,3 @@
-/* import { processPokemon } from '/js/view/cardView.js';
-import { fetchName } from '/js/service/cardService.js'; */
-
 function showList(results) {
   var list = results.split(/[\n:]/);
 
@@ -20,16 +17,13 @@ function showList(results) {
     $('#pokeTable').append(pokeDiv);
 
     let pokeName = `<div>${list[i]}</div>`;
-    let pokeImg = `<div><a href="#/${pokemonName}" id="${pokemonName}">
+    let pokeImg = `<div><a href="#/pokemon/${pokemonName}" id="${pokemonName}">
                    <img src="https://courses.cs.washington.edu/courses/cse154/webservices/pokedex/sprites/${pokemonName}.png"></a></div>`;
 
     $(`#${pokemonName}`).append(pokeName);
     $(`#${pokemonName}`).append(pokeImg);
 
       document.getElementById(pokemonName).addEventListener('click', function () {
-     /* fetchName(processPokemon, pokemonName);*/
-     
-     window.location.hash = `#/pokemon=${pokemonName}`;
     });  
   }
 }
