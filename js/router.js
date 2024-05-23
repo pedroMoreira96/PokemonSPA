@@ -3,7 +3,6 @@ import routes from '/js/routes.js';
 async function launchController(controllerName) {
   try {
     const module = await import(`/js/controller/${controllerName}.js`);
-    console.log(`Launching controller: ${controllerName}`); // Debug log
     module.default.init();
   } catch (err) {
     console.error(err);
@@ -23,7 +22,6 @@ export function navigate(path) {
   const routesKey = Object.keys(routes).find((key) => {
     const routePath = routes[key].path.replace(':name', '([a-zA-Z]+)');
     const regex = new RegExp(`^${routePath}$`);
-    console.log(path + " Estou dentro do setCurrentRoute");
     return regex.test(path);
   });
 
@@ -35,7 +33,6 @@ export function navigate(path) {
     console.log(window.location.hash);
   }
 
-  console.log(`Navigating to: ${path}`); // Debug log
   setCurrentRoute(route);
   launchController(route.controller);
 }
@@ -50,7 +47,6 @@ function init() {
 
   window.addEventListener('hashchange', function (event) {
     const path = getPath(event.newURL);
-    console.log(`Hash changed to: ${path}`); // Debug log
     navigate(path);
   });
 }

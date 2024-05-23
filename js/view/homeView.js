@@ -48,6 +48,10 @@ $('#userInput').on('keypress', function (e) {
     let pokemonName = $('#userInput').val();
     window.location.hash = (`/pokemon/${pokemonName}`);
     $('#userInput').val('');
+    
+    nav.classList.remove("openSearch");
+    nav.classList.remove("openNav");
+    searchIcon.classList.replace("uil-times", "uil-search");
   }
 });
 
