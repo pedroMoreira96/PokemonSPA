@@ -38,9 +38,4 @@ function processPokemon(results) {
 
 }
 
-/* $('#searchIcon').on('click', function () {
-    init();
-    document.getElementById('userInput').value = '';
-  }); */
-
 export { processPokemon };

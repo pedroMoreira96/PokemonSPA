@@ -7,10 +7,6 @@ export default {
     path: '/pokemonList',
     controller: 'pokemonListController',
   },
-  specialPokemons: {
-    path: '/specialPokemon',
-    controller: 'specialPokemonController',
-  },
   pokemon: {
     path: '/pokemon/:name',
     controller: 'cardController',

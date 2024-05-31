@@ -49,10 +49,17 @@ $('#userInput').on('keypress', function (e) {
     window.location.hash = (`/pokemon/${pokemonName}`);
     $('#userInput').val('');
     
-    nav.classList.remove("openSearch");
     nav.classList.remove("openNav");
     searchIcon.classList.replace("uil-times", "uil-search");
   }
 });
+
+window.addEventListener('hashchange', function () {
+  nav.classList.remove("openSearch");
+  nav.classList.remove("openNav");
+  searchIcon.classList.replace("uil-times", "uil-search");
+});
+
+
 
 export default { showHome };
