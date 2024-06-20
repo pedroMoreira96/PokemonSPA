@@ -10,7 +10,7 @@ Welcome to the Pokémon Single Page Application (SPA) project! This application 
 ### Credits
 - [Álvaro Mendes](https://www.linkedin.com/in/alvaro-afp-mendes)
 - [Carlos Minhós](https://www.linkedin.com/in/carlos-minhos)
-- [Daniel Carvalho](https://www.linkedin.com/in/danielcarvalho01)
+- [José Pereira](https://www.linkedin.com/in/SaPereira97)
 - [Pedro Moreira](https://www.linkedin.com/in/pedroarmoreira/)
 
 <br>
