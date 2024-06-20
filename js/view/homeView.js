@@ -1,14 +1,23 @@
 function showHome() {
-  var body = $('#mainDiv');
-  body.empty();
+  var mainDiv = $('#mainDiv');
+  mainDiv.empty();
 
-  var logo = `<img src="resources/logoPokemon.png" alt="logo.png" id="logo">`
+  var logo = $('<img>', {
+    src: 'resources/logoPokemon.png',
+    alt: 'logo.png',
+    id: 'logo'
+  });
 
-  var ashImage = `<img id='ash' src='/resources/ash-walking.gif'>`;
+  var ashImage = $('<img>', {
+    id: 'ash',
+    src: '/resources/ash-walking.gif'
+  });
 
-  body.append(logo);
-  body.append(ashImage);
+  mainDiv.append(logo);
+  mainDiv.append(ashImage);
 }
+
+
 
 $('#homePokeball').on('click', function cleanPage() {
   showHome();
@@ -20,46 +29,46 @@ $('#pokeList').on('click', function cleanPage() {
 });
 
 
-const nav = document.querySelector(".nav"),
-  searchIcon = document.querySelector("#searchIcon"),
-  navOpenBtn = document.querySelector(".navOpenBtn"),
-  navCloseBtn = document.querySelector(".navCloseBtn");
 
-searchIcon.addEventListener("click", () => {
-  nav.classList.toggle("openSearch");
-  nav.classList.remove("openNav");
-  if (nav.classList.contains("openSearch")) {
-    return searchIcon.classList.replace("uil-search", "uil-times");
+const nav = document.querySelector('.nav');
+const searchIcon = document.querySelector('#searchIcon');
+const navOpenBtn = document.querySelector('.navOpenBtn');
+
+searchIcon.addEventListener('click', () => {
+  nav.classList.toggle('openSearch');
+  nav.classList.remove('openNav');
+  if (nav.classList.contains('openSearch')) {
+    searchIcon.classList.replace('uil-search', 'uil-times');
+  } else {
+    searchIcon.classList.replace('uil-times', 'uil-search');
   }
-  searchIcon.classList.replace("uil-times", "uil-search");
 });
 
-navOpenBtn.addEventListener("click", () => {
-  nav.classList.add("openNav");
-  nav.classList.remove("openSearch");
-  searchIcon.classList.replace("uil-times", "uil-search");
-});
-navCloseBtn.addEventListener("click", () => {
-  nav.classList.remove("openNav");
+navOpenBtn.addEventListener('click', () => {
+  nav.classList.toggle('openNav');
+  nav.classList.remove('openSearch');
+  if (!nav.classList.contains('openNav')) {
+    searchIcon.classList.replace('uil-times', 'uil-search');
+  }
 });
 
 $('#userInput').on('keypress', function (e) {
   if (e.which === 13) {
     let pokemonName = $('#userInput').val();
-    window.location.hash = (`/pokemon/${pokemonName}`);
+    fetchPokemon(pokemonName, function(data) {
+      console.log('Pokemon data fetched successfully:', data);
+    });
     $('#userInput').val('');
-    
-    nav.classList.remove("openNav");
-    searchIcon.classList.replace("uil-times", "uil-search");
+
+    nav.classList.remove('openNav');
+    searchIcon.classList.replace('uil-times', 'uil-search');
   }
 });
 
 window.addEventListener('hashchange', function () {
-  nav.classList.remove("openSearch");
-  nav.classList.remove("openNav");
-  searchIcon.classList.replace("uil-times", "uil-search");
+  nav.classList.remove('openSearch');
+  nav.classList.remove('openNav');
+  searchIcon.classList.replace('uil-times', 'uil-search');
 });
-
-
 
 export default { showHome };

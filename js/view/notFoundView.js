@@ -1,17 +1,19 @@
-function showView() {
-  var body = $('#mainDiv');
-  body.empty();
+function showNotFound() {
+  var mainDiv = $('#mainDiv');
+  mainDiv.empty();
 
-  var URL = `/resources/200w.gif`;
+  var card = $('<div>', { class: 'card', id: 'notFound'});
 
-  var card = `<div class="card" id="notFound" style="width: 18rem;"><div class="imageDiv"><img src="${URL}" class="card-img-top" alt="Doesn´t exist"></div>
-        <div class="card-body">
-            <center> <h5 class="card-title"></h5> </center><p></p>
-            <p class="card-text">Error 404: Pokemon not found</p>
-        </div>
-        <div class="card-body">
-        </div></div>`;
-  body.append(card);
+  var imageDiv = $('<div>', { class: 'imageDiv'});
+  var img = $('<img>', { src: `/resources/200w.gif`, id: 'snorlaxSleeping', alt: "Snorlax sleeping"});
+  imageDiv.append(img);
+
+  var cardText = $('<p>', { id: 'notFoundMessage', text: 'Error 404: Pokemon not found' });
+
+  card.append(imageDiv, cardText);
+
+  mainDiv.append(card);
+
 }
 
-export default { showView };
+export default { showNotFound };

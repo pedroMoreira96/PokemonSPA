@@ -9,12 +9,9 @@ function init() {
   }
 
   const pokemonName = getPokemonNameFromHash();
-  if (pokemonName) {
-    console.log(`Fetching Pokémon: ${pokemonName}`);
-    fetchPokemon(pokemonName, processPokemon);
-  } else {
-    console.log("No Pokémon name found in URL hash.");
-  }
+  
+  fetchPokemon(pokemonName, processPokemon);
+
 }
 
 export default { init };

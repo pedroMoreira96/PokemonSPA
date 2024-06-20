@@ -15,6 +15,10 @@ export default {
     path: '/about',
     controller: 'aboutController',
   },
+  notFound: {
+    path: '/notFound',
+    controller: 'notFoundController',
+  },
   currentPath: {
     path: '',
     controller: '',
