@@ -55,9 +55,7 @@ navOpenBtn.addEventListener('click', () => {
 $('#userInput').on('keypress', function (e) {
   if (e.which === 13) {
     let pokemonName = $('#userInput').val();
-    fetchPokemon(pokemonName, function(data) {
-      console.log('Pokemon data fetched successfully:', data);
-    });
+    window.location.hash = (`/pokemon/${pokemonName}`);
     $('#userInput').val('');
 
     nav.classList.remove('openNav');
